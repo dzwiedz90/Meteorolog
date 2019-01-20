@@ -7,7 +7,7 @@ import sleepTime
 	
 #Funkcja wypełniająca plik wygenerowanymi danymi
 def generateData():
-	dataFile = open('sensor2Data.txt', 'w')
+	dataFile = open('sensor1Data.txt', 'w')
 	
 	#Dane generowane w kolejości: prędkość wiatru, wilgotność powietrza, temperatura otoczenia, wysokość pokrywy śnieżnej, ciśnienie atmosferyczne
 	wind = random.randrange(0, 70)    #prędkość wiatru
@@ -26,7 +26,8 @@ def generateData():
 	dataFile.write(str(presseure))
 	dataFile.close()
 
-data = [line.strip() for line in open("sensor2Data.txt", 'r')]
+generateData()
+data = [line.strip() for line in open("sensor1Data.txt", 'r')]
 data[0] = int(data[0])
 data[1] = int(data[1])
 data[2] = float(data[2][0:4])
@@ -86,7 +87,6 @@ def checkAtmosphericPresseure():
 	return atmosphericPresseure
 
 def downloadData():
-	generateData()
 	print(sleepTime.currentTime()+' ######### ROZPOCZĘCIE ODCZYTU DANYCH Z CZUJNIKA NR 1     #####################################')
 	sleepTime.timeToSleep(3)
 	wind = checkWindVelocity()
