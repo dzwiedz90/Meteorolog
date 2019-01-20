@@ -4,17 +4,19 @@ import sys
 import time
 import sensor1
 import sensor2
+import sensor3
 
+
+os.system('cls')
 print('##############################################################################################')
 print('##################################                          ##################################')
 print('##################################        METEOROLOG        ##################################')
 print('##################################                          ##################################')
 print('##############################################################################################')
 print(' ')
-print('ver. 1.0')
+print('ver. 1.0.1')
 print('(C) by dzwiedz90\nWszystkie prawa zastrzeżone')
 print(' ')
-
 input('Wciśnij enter, aby kontynuować...')
 os.system('cls')
 
@@ -33,3 +35,5 @@ sensor1Data = sensor1.downloadData()
 print(sensor1Data)
 sensor2Data = sensor2.downloadData()
 print(sensor2Data)
+sensor3Data = sensor3.downloadData()
+print(sensor3Data)

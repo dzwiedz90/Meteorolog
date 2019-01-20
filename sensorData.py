@@ -4,40 +4,10 @@ import sys
 import sleepTime
 
 
-	
-#Funkcja wypełniająca plik wygenerowanymi danymi
-def generateData():
-	dataFile = open('sensor2Data.txt', 'w')
-	
-	#Dane generowane w kolejości: prędkość wiatru, wilgotność powietrza, temperatura otoczenia, wysokość pokrywy śnieżnej, ciśnienie atmosferyczne
-	wind = random.randrange(0, 70)    #prędkość wiatru
-	humidity = random.randrange(0, 100)   #wilgotność powietrza
-	temperature = random.uniform(-50.0, 4.0) #temperatura otoczenia
-	snow = random.randrange(0, 400)   #wysokość pokrywy śnieżnej
-	presseure = random.randrange(850, 1100)#ciśnienie atmosferyczne
-	dataFile.write(str(wind))
-	dataFile.write('\n')
-	dataFile.write(str(humidity))
-	dataFile.write('\n')
-	dataFile.write(str(temperature))
-	dataFile.write('\n')
-	dataFile.write(str(snow))
-	dataFile.write('\n')
-	dataFile.write(str(presseure))
-	dataFile.close()
 
-data = [line.strip() for line in open("sensor2Data.txt", 'r')]
-data[0] = int(data[0])
-data[1] = int(data[1])
-data[2] = float(data[2][0:4])
-data[3] = int(data[3])
-data[4] = int(data[4])
-
-
-	
 #Generuje prędkość wiatru
 def checkWindVelocity():
-	windWelocity = data[0]
+	windWelocity = random.randrange(0, 70)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z wiatromierza  ########################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z wiatromierza         ########################')
@@ -47,7 +17,7 @@ def checkWindVelocity():
 	
 #Generuje wilgotność powietrza
 def checkAirHumidity():
-	airHumidity = data[1]
+	airHumidity = random.randrange(0, 100)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z wilgotnościomierza ###################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z wilgotnościomierza        ###################')
@@ -57,7 +27,7 @@ def checkAirHumidity():
 	
 #Generuje temperaturę otoczenia
 def checkTemperature():
-	temperature = data[2]
+	temperature = round(random.uniform(-50.0, 4.0), 1)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z termometru  ##########################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z termometru         ##########################')
@@ -67,7 +37,7 @@ def checkTemperature():
 	
 #Generuje wysokość pokrywy śnieżnej
 def checkSnowHeight():
-	snowHeight = data[3]
+	snowHeight = random.randrange(0, 400)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych miernika głębokości pokrywy śnieżnej ###')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z miernika głębokości pokrywy śnieżnej      ###')
@@ -77,23 +47,10 @@ def checkSnowHeight():
 	
 #Generuje ciśnienie atmosferyczne
 def checkAtmosphericPresseure():
-	atmosphericPresseure = data[4]
+	atmosphericPresseure = random.randrange(850, 1100)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z barometru ############################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z barometru        ############################')
 	sleepTime.timeToSleep(random.uniform(1, 2.5))
 	print(atmosphericPresseure)
 	return atmosphericPresseure
-
-def downloadData():
-	generateData()
-	print(sleepTime.currentTime()+' ######### ROZPOCZĘCIE ODCZYTU DANYCH Z CZUJNIKA NR 2     #####################################')
-	sleepTime.timeToSleep(3)
-	wind = checkWindVelocity()
-	humidity = checkAirHumidity()
-	temperature = checkTemperature()
-	snow = checkSnowHeight()
-	presseure = checkAtmosphericPresseure()
-	print(sleepTime.currentTime()+' ######### ZAKOŃCZONO POBIERANIE DANYCH Z CZUJNIKA NR 2    ####################################')
-	sleepTime.lineBreak()
-	return wind, humidity,temperature, snow, presseure
