@@ -7,13 +7,13 @@ import sensorData
 
 	
 def downloadData():
-	print(sleepTime.currentTime()+' ######### ROZPOCZĘCIE ODCZYTU DANYCH Z CZUJNIKA NR 1     #####################################')
+	print(sleepTime.currentTime()+' ######### ROZPOCZĘCIE ODCZYTU DANYCH Z CZUJNIKA NR 2     #####################################')
 	sleepTime.timeToSleep(3)
 	wind = sensorData.checkWindVelocity()
 	humidity = sensorData.checkAirHumidity()
 	temperature = sensorData.checkTemperature()
 	snow = sensorData.checkSnowHeight()
 	presseure = sensorData.checkAtmosphericPresseure()
-	print(sleepTime.currentTime()+' ######### ZAKOŃCZONO POBIERANIE DANYCH Z CZUJNIKA NR 1    ####################################')
+	print(sleepTime.currentTime()+' ######### ZAKOŃCZONO POBIERANIE DANYCH Z CZUJNIKA NR 2    ####################################')
 	sleepTime.lineBreak()
 	return wind, humidity,temperature, snow, presseure

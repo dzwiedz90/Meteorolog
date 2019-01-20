@@ -87,13 +87,13 @@ def checkAtmosphericPresseure():
 
 def downloadData():
 	generateData()
-	print(sleepTime.currentTime()+' ######### ROZPOCZĘCIE ODCZYTU DANYCH Z CZUJNIKA NR 2     #####################################')
+	print(sleepTime.currentTime()+' ######### ROZPOCZĘCIE ODCZYTU DANYCH Z CZUJNIKA NR 1     #####################################')
 	sleepTime.timeToSleep(3)
 	wind = checkWindVelocity()
 	humidity = checkAirHumidity()
 	temperature = checkTemperature()
 	snow = checkSnowHeight()
 	presseure = checkAtmosphericPresseure()
-	print(sleepTime.currentTime()+' ######### ZAKOŃCZONO POBIERANIE DANYCH Z CZUJNIKA NR 2    ####################################')
+	print(sleepTime.currentTime()+' ######### ZAKOŃCZONO POBIERANIE DANYCH Z CZUJNIKA NR 1    ####################################')
 	sleepTime.lineBreak()
 	return wind, humidity,temperature, snow, presseure
