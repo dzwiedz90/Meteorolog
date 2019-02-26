@@ -1,4 +1,4 @@
-Aplikacja meteorologiczna uruchamiana na stacji meteorologicznej na <Antarktydzie> dokonuj¹ca odzytu danych z sensorów pomiarowych
+Symulacja aplikacji meteorologicznej uruchamianej na fikcyjnej stacji meteorologicznej na <Antarktydzie> dokoujÄ…ca odzytu danych z sensorÃ³w pomiarowych
 rozmieszczonych na kontynencie.
-Pierwszy sensor generuje dane i przekazuje je do g³ównego modu³u.
-Drugi sensor generuje dane, zapisuje je do pliku, odczytuje je z pliku i wysy³a do g³ównego modu³u.
+Pierwszy sensor generuje dane, zapisuje je do pliku, odczytuje je z pliku i wysyÅ‚a do gÅ‚Ã³wnego moduÅ‚u.
+Drugi i trzeci sensor generuje dane i przekazuje je do gÅ‚Ã³wnego moduÅ‚u.
