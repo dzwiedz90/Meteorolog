@@ -15,12 +15,11 @@ def main():
 	print('##################################                          ##################################')
 	print('##############################################################################################')
 	print(' ')
-	print('ver. 1.1.1')
+	print('ver. 1.2')
 	print('(C) by dzwiedz90\nWszystkie prawa zastrzeżone')
 	print(' ')
 
 	input('Wciśnij enter, aby kontynuować...')
-	os.system('cls')
 
 	choose = 0
 	while choose == 0:
@@ -34,11 +33,30 @@ def main():
 			sys.exit(0)
 
 	sensor1Data = sensor1.downloadData()
-	print(sensor1Data)
 	sensor2Data = sensor2.downloadData()
-	print(sensor2Data)
 	sensor3Data = sensor3.downloadData()
-	print(sensor3Data)
+	input('ZAKOŃCZONO POBIERANIE DANYCH Z SENSORÓW. WCIŚNIJ ENTER, ABY KONTYNUOWAĆ...')
+	
+	print(' ')
+	print(' ')
+	
+	#1 do 2	     1 do 3	    	5 do 3	  	1 do 3		3 do 4
+	#wind,       humidity,	  temperature, 	snow,     presseure
+	print('+-------------------------------------------------------------------------------------------------------------------------+')
+	print('|          ||  Prędkość wiatru  || Wilogtność powietrza || Temperatura || Głębokość pokrywy śniegu || Ciśnienie powietrza |')
+	print('+----------||-------------------||----------------------||-------------||--------------------------||---------------------+')
+	print('+----------||-------------------||----------------------||-------------||--------------------------||---------------------+')
+	print('| Sensor 1 ||       ',sensor1Data[0],'        ||       ',sensor1Data[1],'           ||    ',sensor1Data[2],'  ||           ',sensor1Data[3],'          ||          ',sensor1Data[4],'      |')
+	print('+----------||-------------------||----------------------||-------------||--------------------------||---------------------+')
+	print('| Sensor 2 ||       ',sensor2Data[0],'        ||       ',sensor2Data[1],'           ||    ',sensor2Data[2],'  ||           ',sensor2Data[3],'          ||          ',sensor2Data[4],'      |')
+	print('+----------||-------------------||----------------------||-------------||--------------------------||---------------------+')
+	print('| Sensor 3 ||       ',sensor3Data[0],'        ||       ',sensor3Data[1],'           ||    ',sensor3Data[2],'  ||           ',sensor3Data[3],'          ||          ',sensor3Data[4],'      |')
+	print('+----------||-------------------||----------------------||-------------||--------------------------||---------------------+')
+	print('+-------------------------------------------------------------------------------------------------------------------------+')
+	print(' ')
+	print(' ')
+	input('ZAKOŃCZENIE POBIERANIA WYNIKÓW. PWORÓT DO MENU GŁÓWNEGO WCISNIJ ENTER...')
 	main()
-
+	
+	
 main()

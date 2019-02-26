@@ -10,10 +10,10 @@ def generateData():
 	dataFile = open('sensor1Data.txt', 'w')
 	
 	#Dane generowane w kolejości: prędkość wiatru, wilgotność powietrza, temperatura otoczenia, wysokość pokrywy śnieżnej, ciśnienie atmosferyczne
-	wind = random.randrange(0, 70)    #prędkość wiatru
-	humidity = random.randrange(0, 100)   #wilgotność powietrza
-	temperature = random.uniform(-50.0, 4.0) #temperatura otoczenia
-	snow = random.randrange(0, 400)   #wysokość pokrywy śnieżnej
+	wind = random.randrange(10, 70)    #prędkość wiatru
+	humidity = random.randrange(10, 99)   #wilgotność powietrza
+	temperature = random.uniform(-50.0, -10.0) #temperatura otoczenia
+	snow = random.randrange(100, 400)   #wysokość pokrywy śnieżnej
 	presseure = random.randrange(850, 1100)#ciśnienie atmosferyczne
 	dataFile.write(str(wind))
 	dataFile.write('\n')

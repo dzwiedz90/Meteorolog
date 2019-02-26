@@ -7,7 +7,7 @@ import sleepTime
 
 #Generuje prędkość wiatru
 def checkWindVelocity():
-	windWelocity = random.randrange(0, 70)
+	windWelocity = random.randrange(10, 70)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z wiatromierza  ########################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z wiatromierza         ########################')
@@ -17,7 +17,7 @@ def checkWindVelocity():
 	
 #Generuje wilgotność powietrza
 def checkAirHumidity():
-	airHumidity = random.randrange(0, 100)
+	airHumidity = random.randrange(10, 99)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z wilgotnościomierza ###################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z wilgotnościomierza        ###################')
@@ -27,7 +27,7 @@ def checkAirHumidity():
 	
 #Generuje temperaturę otoczenia
 def checkTemperature():
-	temperature = round(random.uniform(-50.0, 4.0), 1)
+	temperature = round(random.uniform(-50.0, -10.0), 1)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych z termometru  ##########################')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z termometru         ##########################')
@@ -37,7 +37,7 @@ def checkTemperature():
 	
 #Generuje wysokość pokrywy śnieżnej
 def checkSnowHeight():
-	snowHeight = random.randrange(0, 400)
+	snowHeight = random.randrange(100, 400)
 	print(sleepTime.currentTime()+' ######### Odczyt danych z czujnika, pobieranie danych miernika głębokości pokrywy śnieżnej ###')
 	sleepTime.timeToSleep(random.randrange(2,5))
 	print(sleepTime.currentTime()+' ######### Połączono z czujnikiem, pobrano dane z miernika głębokości pokrywy śnieżnej      ###')
