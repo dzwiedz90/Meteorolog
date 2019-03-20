@@ -1,4 +1,5 @@
 #Program odczytujący dane z czujek meteorologicznych
+#Jeżeli dane nie wyświetlają się poprawnie w oknie należy powiększyć okno
 import os
 import sys
 import time
@@ -18,11 +19,28 @@ def main():
 	print('ver. 1.2')
 	print('(C) by dzwiedz90\nWszystkie prawa zastrzeżone')
 	print(' ')
-
+	print(' ')
+	print(' ')
+	print('*Jeżeli dane nie wyświetlają się poprawnie w oknie należy powiększyć okno*')
+	print(' ')
+	print(' ')
+	print(' ')
 	input('Wciśnij enter, aby kontynuować...')
 
 	choose = 0
-	while choose == 0:
+	while_exit = 'dupa'
+	while while_exit == 'dupa':
+		os.system('cls')
+		print('##############################################################################################')
+		print('##################################                          ##################################')
+		print('##################################        METEOROLOG        ##################################')
+		print('##################################                          ##################################')
+		print('##############################################################################################')
+		print(' ')
+		print('ver. 1.2')
+		print('(C) by dzwiedz90\nWszystkie prawa zastrzeżone')
+		print(' ')
+		print(' ')
 		print('1. Odczytaj dane z czujek')
 		print('2. Wyjdź')	
 		choose = input('Wybierz tryb i naciśnij enter: ')
@@ -31,13 +49,16 @@ def main():
 			break
 		elif choose == '2':
 			sys.exit(0)
+		else:
+			continue
 
+	os.system('cls')
 	sensor1Data = sensor1.downloadData()
 	sensor2Data = sensor2.downloadData()
 	sensor3Data = sensor3.downloadData()
 	input('ZAKOŃCZONO POBIERANIE DANYCH Z SENSORÓW. WCIŚNIJ ENTER, ABY KONTYNUOWAĆ...')
-	
-	print(' ')
+
+	os.system('cls')
 	print(' ')
 	
 	#1 do 2	     1 do 3	    	5 do 3	  	1 do 3		3 do 4
@@ -55,7 +76,7 @@ def main():
 	print('+-------------------------------------------------------------------------------------------------------------------------+')
 	print(' ')
 	print(' ')
-	input('ZAKOŃCZENIE POBIERANIA WYNIKÓW. PWORÓT DO MENU GŁÓWNEGO WCISNIJ ENTER...')
+	input('ZAKOŃCZENIE POBIERANIA WYNIKÓW. POWRÓT DO MENU GŁÓWNEGO WCISNIJ ENTER...')
 	main()
 	
 	
